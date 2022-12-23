@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:  (https://your-solution-url.com)
+- Solution URL:  (https://www.frontendmentor.io/solutions/social-proof-section-BEdBUh6yAC)
 - Live Site URL: (https://astonishing-dodol-63b160.netlify.app/)
 
 ## My process
