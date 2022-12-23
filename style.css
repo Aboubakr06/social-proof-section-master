@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+    --clr-primary-400: hsl(300, 43%, 22%);
+    --clr-secondary-300: hsl(333, 80%, 67%);
+
+    --clr-neutral-300: hsl(303, 10%, 53%);
+    --clr-neutral-200: hsl(300, 24%, 96%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --ff-base: 'League Spartan', sans-serif;
+
+    --fw-bolder: 700;
+    --fw-bold: 500;
+    --fw-regular: 400;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/*
+  9. Create a root stacking context
+#root,
+#__next {
+    isolation: isolate;
+}
+*/
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--clr-neutral-300);
+    background-color: var(--clr-neutral-100);
+    background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
+    background-position: 0% 0%, 100% 100%;
+    background-repeat: no-repeat;
+
+    display: grid;
+    place-content: auto;
+    text-align: center;
+}
+
+.container {
+    --content-spacing: 1rem;
+    display: grid;
+    gap: 2rem;
+    padding-top: 3rem;
+    margin: 2rem;
+}
+
+.head__elements {
+    display: grid;
+    gap: 2rem;
+}
+
+.info-container {
+    display: grid;
+    gap: var(--content-spacing);
+}
+
+.info-container h1 {
+    font-size: 2rem;
+    margin: 0 2rem;
+    font-weight: var(--fw-bolder);
+    color: var(--clr-primary-400);
+}
+
+.info-container p {
+    font-weight: var(--fw-bold);
+    font-size: 1rem;
+}
+
+.ratings-container {
+    display: grid;
+    gap: var(--content-spacing);
+}
+
+.ratings {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--clr-neutral-200);
+}
+.ratings p{
+    color: var(--clr-primary-400);
+    font-size: 1rem;
+    font-weight: var(--fw-bolder);
+}
+
+.flex-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.reviews-container {
+    display: grid;
+    gap: var(--content-spacing);
+}
+
+.buyers-reviews {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: start;
+    display: grid;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-400);
+}
+
+.buyers-reviews img{
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.buyers-reviews h2{
+    font-size: 1rem;
+}
+
+
+.buyers-reviews span{
+    font-size: 1rem;
+    color: var(--clr-secondary-300);
+}
+
+.buyers-reviews .flex-group {
+    justify-content: start;
+    gap: 1.2rem;
+}
+
+@media (min-width: 70em) {
+    body {
+        background-image: url("images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
+        background-position: 0% 0% , 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        gap: 4rem;
+        padding: 1rem 6rem;
+    }
+
+    .head__elements {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 1fr;
+        gap: 5rem;
+    }
+
+    .info-container {
+        text-align: start;
+    }
+
+    .info-container h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        font-weight: var(--fw-bolder);
+        color: var(--clr-primary-400);
+    }
+
+    .ratings {
+        display: flex;   
+        align-items: center;
+        padding: 0.75rem 2rem;
+        gap: var(--content-spacing);
+    }
+
+    .ratings-container {
+        display: grid;
+        place-content: center;
+        padding: 2rem 2rem 2rem 6rem;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .ratings-container > div:nth-child(1){
+        grid-column: 1/11;
+      }
+
+      .ratings-container > div:nth-child(2){
+        grid-column: 2/12;
+      }
+
+      .ratings-container > div:nth-child(3){
+        grid-column: 3/-1;
+      }
+
+    .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .reviews-container > section:nth-child(1){
+        margin-bottom: 2rem;
+      }
+
+      .reviews-container > section:nth-child(2){
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .reviews-container > section:nth-child(3){
+        margin-top: 2rem;
+      }
+}
